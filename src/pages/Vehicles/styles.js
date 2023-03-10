@@ -17,6 +17,7 @@ const styles = StyleSheet.create({
         marginRight: 30,
         borderBottomWidth: 1,
         borderBottomColor: '#444',
+        flexDirection: "row",
     },
     textItem: {
         fontSize: 22,
@@ -41,6 +42,11 @@ const styles = StyleSheet.create({
         paddingLeft: 15,
         paddingRight: 15,
         color: '#FFFFFF',
+    },
+    placa: {
+        width: 100,
+        height: 40,
+        marginRight: 10,
     }
 })
 
