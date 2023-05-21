@@ -5,9 +5,10 @@ import {css} from "assets/css/Css";
 
 export default function VehicleRegistration({navigation}) {
 
-    const [user,setUser]=useState(null);
-    const [password,setPassword]=useState(null);
-    const [email,setEmail]=useState(null);
+    const [Marca,setBrand]=useState(null);
+    const [Modelo,setModel]=useState(null);
+    const [Placa,setLicensePlate]=useState(null);
+    const [Ano,setYear]=useState(null);
 
     //Envia os dados do formulário para o backend
     async function registerUser()
@@ -20,9 +21,10 @@ export default function VehicleRegistration({navigation}) {
             },
             // Json a ser postado
             body: JSON.stringify({
-                nameUser: user,
-                passwordUser: password,
-                emailUser: email
+                Marca: Marca,
+                Modelo: Modelo,
+                Placa: Placa,
+                Ano: Ano,
             })
         });
     }
@@ -38,21 +40,26 @@ export default function VehicleRegistration({navigation}) {
                 <View style={css.footer}>
                     <TextInput
                             style={css.input}
-                            placeholder="Digite seu nome"
-                            onChangeText={(text)=>setUser(text)}
+                            placeholder="Marca"
+                            onChangeText={(text)=>setBrand(text)}
+                    />
+                    <TextInput
+                            style={css.input}
+                            placeholder="Modelo"
+                            onChangeText={(text)=>setModel(text)}
                     />
 
                     <TextInput
                             style={css.input}
-                            placeholder="Digite seu email"
-                            onChangeText={(text)=>setEmail(text)}
+                            placeholder="Placa"
+                            onChangeText={(text)=>setLicensePlate(text)}
                     />
 
                     <TextInput
                             style={css.input}
-                            placeholder="Digite a senha:"
+                            placeholder="Ano"
                             secureTextEntry={true}
-                            onChangeText={(text)=>setPassword(text)}
+                            onChangeText={(text)=>setYear(text)}
                     />
 
                     <TouchableOpacity style={css.button} onPress={registerUser}>
